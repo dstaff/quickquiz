@@ -13,12 +13,26 @@ function getQuestions()
     $stmt = $pdo->prepare($query);
     $stmt->execute();
     // Fetch all books from the result set
-    $questions = $stmt->fetch();
+    $minmax = $stmt->fetch();
 
-    echo $questions["maximo"]."\n";
-    echo $questions["minimo"]."\n";
+    $minimo = $minmax["minimo"];
+    $maximo = $minmax["maximo"];
+
+    $random_id = rand($minimo,$maximo);
+
+    // Query to retrieve the book with the given ID
+    $queryq = 'SELECT * FROM questions WHERE id = :id';
+
+    // Prepare and execute the query with the ID as a parameter
+    $stmtq = $pdo->prepare($queryq);
+    $stmtq->bindValue(':id', $random_id, PDO::PARAM_INT);
+    $stmtq->execute();
+
+    // Fetch the book from the result set
+    $question = $stmt->fetch();
+
     // Return the books as JSON response
-    //echo json_encode($questions);
+    echo json_encode($question);
 }
 
 $f3->run();
