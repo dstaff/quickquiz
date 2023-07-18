@@ -1,4 +1,5 @@
 <?php
+header('Access-Control-Allow-Origin: *');
 echo "x1";
 require_once 'dbconfig.php';
 echo "x2";
