@@ -2,13 +2,13 @@
 
 require '../f3/vendor/autoload.php';
 
-header('Access-Control-Allow-Origin: *');
-//header("Access-Control-Allow-Headers: *");
-header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
-
 $config = parse_ini_file('config.ini', true);
 
 $f3 = Base::instance();
+
+header('Access-Control-Allow-Origin: *');
+//header("Access-Control-Allow-Headers: *");
+header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
 
 $dbConfig = [
     'host' => $config['database']['host'],
