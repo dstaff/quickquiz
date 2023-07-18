@@ -16,7 +16,7 @@ function getQuestions()
     $questions = $stmt->fetch();
 
     echo $questions["maximo"]."\n";
-    echo $questions["minimo"];
+    echo $questions["minimo"]."\n";
     // Return the books as JSON response
     //echo json_encode($questions);
 }
