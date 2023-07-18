@@ -1,9 +1,21 @@
 <?php
+// * wont work in FF w/ Allow-Credentials
+//if you dont need Allow-Credentials, * seems to work
+header('Access-Control-Allow-Origin: https://dstaff.github.io');
+//if you need cookies or login etc
+//header('Access-Control-Allow-Credentials: true');
+
+header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
+header('Access-Control-Max-Age: 604800');
+//if you need special headers
+header('Access-Control-Allow-Headers: x-requested-with');
+//exit(0);
+
 
 require '../f3/vendor/autoload.php';
 
 $f3 = Base::instance();
-$f3->copy('HEADERS.Origin','*');
+//$f3->copy('HEADERS.Origin','*');
 
 $config = parse_ini_file('config.ini', true);
 
