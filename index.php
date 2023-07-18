@@ -3,7 +3,7 @@ header('Access-Control-Allow-Origin: *');
 echo "x1";
 require_once 'dbconfig.php';
 echo "x2";
-$f3->route('GET /', 'getQuestions');
+$f3->route('GET /quickquiz', 'getQuestions');
 echo "x3";
 function getQuestions()
 {
