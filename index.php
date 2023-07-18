@@ -1,2 +1,23 @@
 <?php
-//for questions with fat free framework
+
+require_once 'dbconfig.php';
+
+$f3->route('GET /quickquiz', 'getQuestions');
+
+function getQuestions()
+{
+	$sqlminmax = "SELECT MIN(id) AS minimo,MAX(id) AS maximo FROM questions";
+	$resultminmax = $conn->query($sqlminmax);
+
+    $query = "SELECT MIN(id) AS minimo,MAX(id) AS maximo FROM questions";
+
+    // Prepare and execute the query
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+
+    // Fetch all books from the result set
+    $questions = $stmt->fetchAll();
+
+    // Return the books as JSON response
+    echo json_encode($questions);
+}

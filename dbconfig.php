@@ -27,7 +27,7 @@ $options = [
 try {
 	$pdo = new PDO($dsn, $dbConfig['username'], $dbConfig['password'], $options);
 	//return $pdo;
-	echo 'Everything its ok!';
+	//echo 'Everything its ok!';
 } catch (PDOException $e) {
 	exit('Database connection failed: ' . $e->getMessage());
 }
