@@ -47,7 +47,7 @@ function getQuestions()
         'answers' => $answers
     ];
 
-    header('Content-Type: application/json');
+    //header('Content-Type: application/json');
     // Return the books as JSON response
     echo json_encode($response);
 }
