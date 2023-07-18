@@ -1,0 +1,10 @@
+# Enable Rewrite Engine
+RewriteEngine On
+
+# Specify the base directory (change it according to your project's directory structure)
+RewriteBase /home/sites/24a/f/f3a5dd3c94/public_html/quickquiz
+
+# Redirect all requests to the index.php file
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php [L]
