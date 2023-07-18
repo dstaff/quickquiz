@@ -3,7 +3,10 @@ header('Access-Control-Allow-Origin: *');
 echo "x1";
 require_once 'dbconfig.php';
 echo "x2";
-
+$f3->route('GET /questions', 'getQuestions');
+echo "x3";
+function getQuestions()
+{
     //$query = "SELECT MIN(id) AS minimo,MAX(id) AS maximo FROM questions";
     echo "x4";
     $query = "SELECT * FROM questions";
@@ -19,3 +22,6 @@ echo "x2";
     // Return the books as JSON response
     echo json_encode($questions);
     echo "x9";
+}
+
+$f3->run();
