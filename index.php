@@ -6,7 +6,9 @@ $f3->route('GET /', 'getQuestions');
 
 function getQuestions()
 {
-    $query = "SELECT MIN(id) AS minimo,MAX(id) AS maximo FROM questions";
+    //$query = "SELECT MIN(id) AS minimo,MAX(id) AS maximo FROM questions";
+
+    $query = "SELECT * FROM questions";
 
     // Prepare and execute the query
     $stmt = $pdo->prepare($query);
