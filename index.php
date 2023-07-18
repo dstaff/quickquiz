@@ -3,8 +3,6 @@ header('Access-Control-Allow-Origin: *');
 echo "x1";
 require_once 'dbconfig.php';
 echo "x2";
-$f3->route('GET /', 'getQuestions');
-echo "x3";
 function getQuestions()
 {
     //$query = "SELECT MIN(id) AS minimo,MAX(id) AS maximo FROM questions";
