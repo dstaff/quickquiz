@@ -5,7 +5,7 @@ require '../f3/vendor/autoload.php';
 $config = parse_ini_file('config.ini', true);
 
 $f3 = Base::instance();
-$f3->copy('HEADERS.Origin','CORS.origin');
+$f3->copy('HEADERS.Origin','*');
 
 //header('Access-Control-Allow-Origin: *');
 //header("Access-Control-Allow-Headers: *");
