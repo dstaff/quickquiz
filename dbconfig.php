@@ -5,7 +5,7 @@ $config = parse_ini_file('config.ini', true);
 
 $f3 = Base::instance();
 
-$f3->route('GET /', 'getQuestions');
+$f3->route('GET /questions', 'getQuestions');
 
 $dbConfig = [
     'host' => $config['database']['host'],
