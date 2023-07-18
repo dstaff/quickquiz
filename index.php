@@ -29,10 +29,28 @@ function getQuestions()
     $stmtq->execute();
 
     // Fetch the book from the result set
-    $question = $stmtq->fetch();
+    $row = $stmtq->fetch();
+
+    $id = $row["id"];
+    $question = $row['question'];
+    $difficulty = $row['difficulty'];
+
+    $answers = [
+        'A' => $row['answer_a'],
+        'B' => $row['answer_b'],
+        'C' => $row['answer_c'],
+        'D' => $row['answer_d']
+    ];
+
+    $response = [
+        'id' => $id,
+        'question' => $question,
+        'difficulty' => $difficulty,
+        'answers' => $answers
+    ];
 
     // Return the books as JSON response
-    echo json_encode($question);
+    echo json_encode($response);
 }
 
 $f3->run();
