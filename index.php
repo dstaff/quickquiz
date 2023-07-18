@@ -6,9 +6,6 @@ $f3->route('GET /', 'getQuestions');
 
 function getQuestions()
 {
-	$sqlminmax = "SELECT MIN(id) AS minimo,MAX(id) AS maximo FROM questions";
-	$resultminmax = $conn->query($sqlminmax);
-
     $query = "SELECT MIN(id) AS minimo,MAX(id) AS maximo FROM questions";
 
     // Prepare and execute the query
