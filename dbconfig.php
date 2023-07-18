@@ -1,4 +1,6 @@
 <?php
+header('Access-Control-Allow-Origin: *');
+
 require '../f3/vendor/autoload.php';
 
 $config = parse_ini_file('config.ini', true);

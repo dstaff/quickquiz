@@ -1,6 +1,4 @@
 <?php
-header('Access-Control-Allow-Origin: *');
-
 require_once 'dbconfig.php';
 
 $f3->route('GET /', 'getQuestions');
