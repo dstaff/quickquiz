@@ -14,8 +14,11 @@ function getQuestions()
     $stmt->execute();
     // Fetch all books from the result set
     $questions = $stmt->fetchAll();
+
+    echo $questions["maximo"]."\n";
+    echo $questions["minimo"];
     // Return the books as JSON response
-    echo json_encode($questions);
+    //echo json_encode($questions);
 }
 
 $f3->run();
