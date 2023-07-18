@@ -2,7 +2,7 @@
 
 require_once 'dbconfig.php';
 
-$f3->route('GET /quickquiz', 'getQuestions');
+$f3->route('GET /', 'getQuestions');
 
 function getQuestions()
 {
