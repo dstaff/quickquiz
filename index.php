@@ -13,7 +13,7 @@ function getQuestions()
     $stmt = $pdo->prepare($query);
     $stmt->execute();
     // Fetch all books from the result set
-    $questions = $stmt->fetchAll();
+    $questions = $stmt->fetch();
 
     echo $questions["maximo"]."\n";
     echo $questions["minimo"];
