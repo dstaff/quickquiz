@@ -29,7 +29,7 @@ function getQuestions()
     $stmtq->execute();
 
     // Fetch the book from the result set
-    $question = $stmt->fetch();
+    $question = $stmtq->fetch();
 
     // Return the books as JSON response
     echo json_encode($question);
